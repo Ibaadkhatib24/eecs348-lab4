@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style> 
+            .resize-image {
+                width: 300px;
+            }
+        </style>
+        
+        <style>
+            .paragraph-container {
+                max-width: 800px;
+                margin-right: auto;
+            }
+
+            #paragraph {
+                border: 2px solid white;  /* Initial border style */
+                padding: 10px;
+            }
+        </style>
+        
+        <title>EECS 348 Lab 4 Practice 2</title>
+    </head>    
+<body>
+
+<h1>EECS 348 Lab 4 Practice 2</h1>
+<div class="paragraph-container">
+<p id="paragraph">
+this is the dummy text
+</p>
+</div>
+
+<label>Border R(0-255): <input type="number" id="border-red" max="255" min="0"></label><br>
+<label>Border G(0-255): <input type="number" id="border-green" max="255" min="0"></label><br>
+<label>Border B(0-255): <input type="number" id="border-blue" max="255" min="0"></label><br>
+<label>Border Width: <input type="number" id="border-width" min="0"></label><br>
+
+<label>Background R(0-255): <input type="number" id="background-red" max="255" min="0"></label><br>
+<label>Background G(0-255): <input type="number" id="background-green" max="255" min="0"></label><br>
+<label>Background B(0-255): <input type="number" id="background-blue" max="255" min="0"></label><br>
+
+<button onclick="changeColor()">Change the color</button>
+
+<script>
+    function changeColor() {
+        let borderR = document.getElementById("border-red").value || 0;
+        let borderG = document.getElementById("border-green").value || 0;
+        let borderB = document.getElementById("border-blue").value || 0;
+        let borderWidth = document.getElementById("border-width").value || 2;
+
+        let backgroundR = document.getElementById("background-red").value || 255;
+        let backgroundG = document.getElementById("background-green").value || 255;
+        let backgroundB = document.getElementById("background-blue").value || 255;
+
+        let paragraph = document.getElementById("paragraph");
+        paragraph.style.borderColor = `rgb(${borderR}, ${borderG}, ${borderB})`;
+        paragraph.style.borderWidth = `${borderWidth}px`;
+        paragraph.style.backgroundColor = `rgb(${backgroundR}, ${backgroundG}, ${backgroundB})`;
+    }
+</script>
+
+</body>
+</html>

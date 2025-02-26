@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EECS 348 Lab 4 Practice 3</title>
+        <script>
+            function validate() {
+                let pw1 = document.getElementById("pw1").value;
+                let pw2 = document.getElementById("pw2").value;
+
+                if (pw1.length < 8) {
+                    alert("Password must be at least 8 characters long.");
+                } else if (pw1 !== pw2) {
+                    alert("Passwords do not match!");
+                } else {
+                    alert("Passwords match!");
+                }
+            }
+        </script>
+    </head>    
+<body>
+
+<h1>EECS 348 Lab 4 Practice 3</h1>
+<h2>Password Checker</h2>
+
+<label>enter a password: <input type="password" id="pw1"></label><br>
+<label>confirm the password: <input type="password" id="pw2"></label><br>
+
+<button onclick="validate()">Check</button>
+
+</body>
+</html>
